@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Modifier le candidat</title>
+</head>
+<body>
+<h1>Modifier le candidat</h1>
+<form th:action="@{/candidates/{id}(id=${candidate.id})}" method="post">
+    <input type="hidden" name="_method" value="put" />
+
+    <label for="name">Nom :</label>
+    <input type="text" id="name" name="name" th:value="${candidate.name}" required>
+
+    <label for="email">Email :</label>
+    <input type="email" id="email" name="email" th:value="${candidate.email}" required>
+
+    <label for="phone">Téléphone :</label>
+    <input type="text" id="phone" name="phone" th:value="${candidate.phone}" required>
+
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="/candidates">Retour à la liste des candidats</a>
+</body>
+</html>

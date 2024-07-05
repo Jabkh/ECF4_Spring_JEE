@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails de l'entretien</title>
+</head>
+<body>
+<h1>Détails de l'entretien</h1>
+<p>ID : <span th:text="${interview.id}"></span></p>
+<p>Date : <span th:text="${interview.date}"></span></p>
+<p>Candidat : <span th:text="${interview.candidate.name}"></span></p>
+<a href="/interviews">Retour à la liste des entretiens</a>
+</body>
+</html>

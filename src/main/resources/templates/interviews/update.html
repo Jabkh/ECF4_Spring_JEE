@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Modifier l'entretien</title>
+</head>
+<body>
+<h1>Modifier l'entretien</h1>
+<form th:action="@{/interviews/{id}(id=${interview.id})}" method="post">
+    <input type="hidden" name="_method" value="put" />
+
+    <label for="date">Date :</label>
+    <input type="date" id="date" name="date" th:value="${interview.date}" required>
+
+    <label for="candidate">Candidat :</label>
+    <select id="candidate" name="candidateId" required>
+        <option th:each="candidate : ${candidates}" th:value="${candidate.id}" th:text="${candidate.name}" th:selected="${candidate.id == interview.candidateId}"></option>
+    </select>
+
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="/interviews">Retour à la liste des entretiens</a>
+</body>
+</html>

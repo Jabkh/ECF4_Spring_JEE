@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Créer une nouvelle candidature</title>
+</head>
+<body>
+<h1>Créer une nouvelle candidature</h1>
+<form th:action="@{/applications}" method="post">
+    <label for="date">Date :</label>
+    <input type="date" id="date" name="date" required>
+
+    <label for="job">Offre d'emploi :</label>
+    <select id="job" name="jobId" required>
+        <option th:each="job : ${jobs}" th:value="${job.id}" th:text="${job.title}"></option>
+    </select>
+
+    <label for="candidate">Candidat :</label>
+    <select id="candidate" name="candidateId" required>
+        <option th:each="candidate : ${candidates}" th:value="${candidate.id}" th:text="${candidate.name}"></option>
+    </select>
+
+    <button type="submit">Enregistrer</button>
+</form>
+<a href="/applications">Retour à la liste des candidatures</a>
+</body>
+</html>

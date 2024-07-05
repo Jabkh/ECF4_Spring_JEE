@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails de la candidature</title>
+</head>
+<body>
+<h1>Détails de la candidature</h1>
+<p>ID : <span th:text="${application.id}"></span></p>
+<p>Date : <span th:text="${application.date}"></span></p>
+<p>Offre d'emploi : <span th:text="${application.job.title}"></span></p>
+<p>Candidat : <span th:text="${application.candidate.name}"></span></p>
+<a href="/applications">Retour à la liste des candidatures</a>
+</body>
+</html>

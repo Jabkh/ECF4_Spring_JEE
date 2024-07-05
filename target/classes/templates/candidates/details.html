@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Détails du candidat</title>
+</head>
+<body>
+<h1>Détails du candidat</h1>
+<p>ID : <span th:text="${candidate.id}"></span></p>
+<p>Nom : <span th:text="${candidate.name}"></span></p>
+<p>Email : <span th:text="${candidate.email}"></span></p>
+<p>Téléphone : <span th:text="${candidate.phone}"></span></p>
+<a href="/candidates">Retour à la liste des candidats</a>
+</body>
+</html>

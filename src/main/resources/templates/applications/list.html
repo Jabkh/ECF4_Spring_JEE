@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Liste des candidatures</title>
+</head>
+<body>
+<h1>Liste des candidatures</h1>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Date</th>
+        <th>Offre d'emploi</th>
+        <th>Candidat</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="application : ${applications}">
+        <td th:text="${application.id}"></td>
+        <td th:text="${application.date}"></td>
+        <td th:text="${application.job.title}"></td>
+        <td th:text="${application.candidate.name}"></td>
+        <td>
+            <a th:href="@{'/applications/' + ${application.id}}">Voir</a>
+            <a th:href="@{'/applications/edit/' + ${application.id}}">Modifier</a>
+            <a th:href="@{'/applications/delete/' + ${application.id}}" onclick="return confirm('Êtes-vous sûr ?')">Supprimer</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<a href="/applications/create">Créer une nouvelle candidature</a>
+</body>
+</html>
